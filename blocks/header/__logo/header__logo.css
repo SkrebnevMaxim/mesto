@@ -1,0 +1,29 @@
+.header__logo {
+  max-width: 142px;
+  margin-left: 200px;
+  margin-top: 45px;
+}
+.header__logo:hover{
+  background-color: black;
+  transition: .1s linear;
+}
+
+@media screen and (max-width: 1279px){
+.header__logo {
+  margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 1023px){
+.header__logo {
+  margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 767px){
+.header__logo {
+  max-width: 103.74px;
+  margin-left: 27px;
+  margin-top: 28px;
+  }
+}

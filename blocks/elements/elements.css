@@ -1,0 +1,18 @@
+.elements {
+margin-top: 47.25px;
+margin-left: 200px;
+margin-right: 200px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 20px;
+}
+
+@media screen and (max-width: 767px){
+.elements {
+  display: flex;
+  flex-direction: column;
+  margin-left: 19px;
+  margin-right: 19px;
+  margin-top: 36px;
+  }
+}

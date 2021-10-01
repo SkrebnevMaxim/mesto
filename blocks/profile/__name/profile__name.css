@@ -1,0 +1,10 @@
+.profile__name {
+  margin-right: 0;
+  max-width: 50%;
+}
+
+@media screen and (max-width: 767px){
+.profile__name{
+  grid-column: 1;
+  }
+}
