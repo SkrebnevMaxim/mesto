@@ -8,6 +8,7 @@
   right: -35px;
   border: none;
   background-color: black;
+  background-repeat: no-repeat;
 }
 
 @media screen and (max-width: 1279px){
