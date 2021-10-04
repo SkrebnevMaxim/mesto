@@ -16,10 +16,16 @@
 .footer {
   max-width: 282px;
   min-height: 14px;
-  margin-left: 19px;
+  margin-left: 100px;
   margin-top: 48px;
   margin-bottom: 36px;
   font-size: 14px;
   line-height: 17px;
+  }
+}
+
+@media screen and (max-width: 767px){
+.footer {
+  margin-left: 19px;
   }
 }
