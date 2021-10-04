@@ -10,9 +10,16 @@
   border-radius: 2px;
   font-family: "Inter", "Arial", "sans-serif";
 }
+.popup__btn:hover {
+  opacity: 0.8;
+  transition: .1s linear;
+  cursor: pointer;
+}
 
 @media screen and (max-width: 767px){
 .popup__btn {
+  margin-top: 45px;
+  margin-bottom: 5px;
   font-size: 14px;
   line-height: 17px;
   }

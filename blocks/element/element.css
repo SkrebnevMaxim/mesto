@@ -1,8 +1,8 @@
 .element {
   background: #FFFFFF;
   width: 282px;
-  height: 361px;
-  border-radius: 8px;
+  min-height: 361px;
+  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
 }

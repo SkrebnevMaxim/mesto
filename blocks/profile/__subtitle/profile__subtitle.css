@@ -2,11 +2,16 @@
   margin-block-start: 0;
   margin-block-end: 0;
   color: #FFFF;
+  font-weight: normal;
   font-family: "Inter", "Arial", "sans-serif";
   font-size: 18px;
   line-height: 22px;
   margin-left: 22.5px;
   margin-top: 16px;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 1023px){

@@ -1,8 +1,7 @@
 .popup__title {
-  width: 100%;
-  margin: 0;
-  margin-bottom: 54px;
-  padding: 0;
+  width: 330px;
+  height: 23px;
+  margin: 34px 64px 54px 36px;
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
@@ -10,23 +9,17 @@
   font-family: "Inter", "Arial", "sans-serif";
 }
 
-@media screen and (max-width: 1279px){
-.popup__title {
-  font-size: 20px;
-  line-height: 20px;
-  }
-}
-
 @media screen and (max-width: 1023px){
 .popup__title {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 65px;
   }
 }
 
 @media screen and (max-width: 767px){
 .popup__title {
+  font-size: 18px;
   line-height: 22px;
-  margin-bottom: 75px;
+  margin: 25px 22px 75px;
   }
 }

@@ -1,8 +1,7 @@
 .element__photo {
   width: 282px;
   height: 282px;
-  left: 482px;
-  top: 711px;
   transform: matrix(-1, 0, 0, 1, 0, 0);
-  border-radius: 8px 8px 0 0;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
 }
