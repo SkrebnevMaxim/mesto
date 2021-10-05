@@ -5,7 +5,7 @@
   border: none;
   background-color: #FFFF;
   margin-left: 30px;
-  width: 22px;
+  min-width: 22px;
   height: 19px;
 }
 .element__like-button:hover{

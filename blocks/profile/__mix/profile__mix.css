@@ -1,3 +1,4 @@
 .profile__mix {
   display: flex;
+  max-width: 100%;
 }
