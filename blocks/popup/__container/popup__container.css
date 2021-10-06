@@ -5,13 +5,11 @@
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
   position: relative;
-  transform: translate(0, -72px);
 }
 
 @media screen and (max-width: 767px){
 .popup__container {
   width: 282px;
   min-height: 322px;
-  transform: translate(0, -40px);
   }
 }
