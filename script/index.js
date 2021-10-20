@@ -80,6 +80,7 @@ function addCard(evt) { // функция добавления новой кар
     link: linkInput
   }
   prependCard(dataCard);
+  evt.target.reset(); // стираем введенные параметры в input после добавления карточки
   popupCreateClose();
 }
  formAdd.addEventListener('submit', addCard)
