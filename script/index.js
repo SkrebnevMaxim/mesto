@@ -9,7 +9,7 @@ const formEdit = document.querySelector('.popup__form_edit');
 const createPopup = document.querySelector('.createPopup');
 const createPopupOpen = document.querySelector('.profile__addbutton');
 const createPopupClose = document.querySelector('.createPopup__close');
-
+const linkCard = document.querySelector('.createPopup__input_card-link');
 const nameCard = document.querySelector('.createPopup__input_card-name');
 
 const formAdd = document.querySelector('.popup__form_add');
@@ -74,7 +74,6 @@ function popupCreateClose() {  //функция закрытия popup созд�
 function addCard(evt) { // функция добавления новой карточки
   evt.preventDefault();
   const nameInput = nameCard.value;
-  let linkCard = document.querySelector('.createPopup__input_card-link');
   const linkInput = linkCard.value;
   const dataCard = {
     name: nameInput,
