@@ -5,12 +5,14 @@ const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job'); 
 const nameMain = document.querySelector('.profile__title'); 
 const jobMain = document.querySelector('.profile__subtitle'); 
-const form = document.querySelector('.popup__form');
+const formEdit = document.querySelector('.popup__form_edit');
 const createPopup = document.querySelector('.createPopup');
 const createPopupOpen = document.querySelector('.profile__addbutton');
 const createPopupClose = document.querySelector('.createPopup__close');
+
 const nameCard = document.querySelector('.createPopup__input_card-name');
-const linkCard = document.querySelector('.createPopup__input_card-link');
+
+const formAdd = document.querySelector('.popup__form_add');
 
 const initialCards = [
   {
@@ -72,14 +74,16 @@ function popupCreateClose() {  //функция закрытия popup созд�
 function addCard(evt) { // функция добавления новой карточки
   evt.preventDefault();
   const nameInput = nameCard.value;
+  let linkCard = document.querySelector('.createPopup__input_card-link');
   const linkInput = linkCard.value;
   const dataCard = {
     name: nameInput,
     link: linkInput
   }
   prependCard(dataCard);
+  popupCreateClose();
 }
- form.addEventListener('submit', addCard)
+ formAdd.addEventListener('submit', addCard)
 
 
 function openPopup() { 
@@ -99,7 +103,7 @@ function submitForm(event) {
 
 
 
-form.addEventListener('submit', submitForm) 
+formEdit.addEventListener('submit', submitForm) 
  
 popupClose.addEventListener('click', closePopup) 
 popupOpen.addEventListener('click', openPopup)

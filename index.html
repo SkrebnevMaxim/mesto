@@ -28,10 +28,8 @@
         </div>
         <button type="button" class="profile__addbutton"></button>
       </section>
-      
+
       <template id="card" class="elements">
-        <div class="create__list">
-        </div>
         <article class="element">
           <img class="element__photo"  alt="Названия города">
           <div class="element__block">
@@ -52,7 +50,7 @@
       <div class="popup__container">
         <button type="button" class="popup__close"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form name="formPopup" class="popup__form">
+        <form name="formPopup" class="popup__form popup__form_edit">
           <input class="popup__input popup__input_type_name" type="text" name="nameInput" required placeholder="Ввведите имя ...">
           <input class="popup__input popup__input_type_job" type="text" name="jobInput" required placeholder="Введите профессию ...">
           <button class="popup__btn" type="submit">Сохранить</button>
@@ -65,7 +63,7 @@
       <div class="createPopup__container">
         <button type="button" class="createPopup__close"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form name="CreateformPopup" class="popup__form">
+        <form name="CreateformPopup" class="popup__form popup__form_add">
           <input class="popup__input createPopup__input_card-name" type="text" name="nameInput" required placeholder="Название">
           <input class="popup__input createPopup__input_card-link" type="text" name="jobInput" required placeholder="Ссылка на картинку">
           <button class="popup__btn" type="submit">Создать</button>
