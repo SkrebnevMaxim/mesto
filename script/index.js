@@ -52,7 +52,7 @@ function createCard(item){
   element.querySelector('.element__like-button').addEventListener('click', function (evt) { //добавляем возможность сделать кнопку like активной(поменять цвет)
     evt.target.classList.toggle('element__like-button_active');
     });
-  element.querySelector('.element__delit').addEventListener('click', function(evt) {
+  element.querySelector('.element__delit').addEventListener('click', function(evt) {  // доюовляем возможность удалять карточки
     evt.target.closest('.element').remove();
   });
 
@@ -84,6 +84,17 @@ function addCard(evt) { // функция добавления новой кар
   popupCreateClose();
 }
  formAdd.addEventListener('submit', addCard)
+
+function bigcard (src, alt) {
+  const cardphoto = document.querySelector('.bigCard__photo').src;
+  const cardtitle = document.querySelector('.bigCard__title').alt;
+  function opencard() { 
+    popup.classList.add('bigCard_active'); 
+  } 
+  const openbig = document.querySelector('.element__photo');
+  openbig.addEventListener('click', opencard);
+  bigcard()
+}
 
 
 function openPopup() { 

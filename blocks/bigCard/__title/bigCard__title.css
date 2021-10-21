@@ -1,0 +1,11 @@
+.bigCard__title {
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  width: 291px;
+  height: 12px;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+}
