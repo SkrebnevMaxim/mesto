@@ -15,6 +15,11 @@ const formAdd = document.querySelector('.popup__form_add');
 const cardsElement = document.querySelector('#card');
 const cardTemplate = document.querySelector('.elements').content;
 const elementDelit = document.querySelector('.element__delit');
+const bigCard = document.querySelector('.popup__big-card');
+const openBigCard = document.querySelector('.element__photo');
+const closeBigCard = document.querySelector(".popup__close-card")
+const bigPhoto = document.querySelector('.bigCard__photo');
+const bigCardTitle = document.querySelector('.bigCard__title');
 
 const initialCards = [ // создаем массив карточек
   {
@@ -43,21 +48,32 @@ const initialCards = [ // создаем массив карточек
   }
 ];
 
-
 initialCards.forEach(prependCard)
 
 function createCard(item){ // создаем функцию добавления элементов из массива на страницу
   const element = cardTemplate.querySelector('.element').cloneNode(true);
   element.querySelector('.element__title').innerText = item.name; //заполняем карточку элементами
   element.querySelector('.element__photo').src = item.link;
+  element.querySelector('.element__photo').alt = item.name;
   element.querySelector('.element__like-button').addEventListener('click', function (evt) { //добавляем возможность сделать кнопку like активной(поменять цвет)
     evt.target.classList.toggle('element__like-button_active');
     });
   element.querySelector('.element__delit').addEventListener('click', function(evt) {  // добавляем возможность удалять карточки
     evt.target.closest('.element').remove();
   });
-
+ element.addEventListener('click', function(evt){  // функция открытия по любой карточке из маленькой в большую
+   evt.preventDefault();
+   const card = evt.target.closest('.element');
+   const image = card.querySelector('.element__photo').src;
+   openCard(image);
+ })
   return element;
+}
+
+function openCard(src, alt) { 
+  bigPhoto.src = src;
+  bigPhoto.alt = alt;
+  openPopup(bigCard);
 }
 
 function prependCard(item){ // функция добавления новой карточки
@@ -101,3 +117,4 @@ popupClose.addEventListener('click', () => closePopup(popupEdit));
 popupOpen.addEventListener('click', () => openPopup(popupEdit));
 createPopupClose.addEventListener('click', () => closePopup(createPopup));
 createPopupOpen.addEventListener('click', () => openPopup(createPopup));
+closeBigCard.addEventListener('click', () =>closePopup(bigCard));
