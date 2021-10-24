@@ -8,7 +8,7 @@ const jobMain = document.querySelector('.profile__subtitle');
 const form = document.querySelector('.popup__form');
 const createPopup = document.querySelector('.popup_create-card');
 const createPopupOpen = document.querySelector('.profile__addbutton');
-const createPopupClose = document.querySelector('.popup__close_create');
+const createPopupClose = document.querySelector('.popup__close-create');
 const linkCard = document.querySelector('.popup__input_create_link');
 const nameCard = document.querySelector('.popup__input_create_name');
 const formAdd = document.querySelector('.popup__form_add');
@@ -18,8 +18,8 @@ const elementDelit = document.querySelector('.element__delit');
 const bigCard = document.querySelector('.popup_big-card');
 const openBigCard = document.querySelector('.element__photo');
 const closeBigCard = document.querySelector(".popup__close-card");
-const bigPhoto = document.querySelector('.popup__big_photo');
-const bigCardTitle = document.querySelector('.popup__big_title');
+const bigPhoto = document.querySelector('.popup__big-photo');
+const bigCardTitle = document.querySelector('.popup__big-title');
 
 const initialCards = [ // создаем массив карточек
   {
