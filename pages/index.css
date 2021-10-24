@@ -38,8 +38,8 @@
 @import url(../blocks/popup/__input/_type/popup__input_type_job.css);
 @import url(../blocks/createPopup/popup_create-card.css);
 @import url(../blocks/createPopup/_create-close/popup_create-close.css);
-@import url(../blocks/createPopup/_input/create__input-name.css);
-@import url(../blocks/createPopup/_input/create__input-link.css);
+@import url(../blocks/createPopup/__create/popup__create_input-name.css);
+@import url(../blocks/createPopup/__create/popup__create_input-link.css);
 @import url(../blocks/createPopup/__form/popup__form_add.css);
 @import url(../blocks/bigCard/_big-title/popup_big-title.css);
 @import url(../blocks/bigCard/_big-photo/popup_big-photo.css);
