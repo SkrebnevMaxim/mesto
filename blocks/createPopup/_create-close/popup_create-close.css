@@ -1,4 +1,4 @@
-.createPopup__close {
+.popup_create-close {
   background-image: url(../../../images/close.svg);
   background-size: 35px 35px;
   width: 35px;
@@ -10,14 +10,14 @@
   background-color: rgba(0, 0, 0, 0);
   background-repeat: no-repeat;
 }
-.createPopup__close:hover {
+.popup_create-close:hover {
   opacity: 0.6;
   transition: .1s linear;
   cursor: pointer;
 }
 
 @media screen and (max-width: 1279px){
-.createPopup__close{
+.popup_create-close{
   background-size: 32px 32px;
   width: 32px;
   height: 32px;
@@ -25,7 +25,7 @@
 }
 
 @media screen and (max-width: 1023px){
-.createPopup__close{
+.popup_create-close{
   background-size: 24px 25px;
   width: 25px;
   height: 25px;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 767px){
-.createPopup__close{
+.popup_create-close{
   background-size: 20px 20px;
   width: 20px;
   height: 20px;

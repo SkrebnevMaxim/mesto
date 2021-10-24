@@ -1,4 +1,4 @@
-const popupEdit = document.querySelector('.popup__edit-card');
+const popupEdit = document.querySelector('.popup_edit-card');
 const popupOpen = document.querySelector('.profile__editbutton');
 const popupClose = document.querySelector('.popup__close');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -6,20 +6,20 @@ const jobInput = document.querySelector('.popup__input_type_job');
 const nameMain = document.querySelector('.profile__title');
 const jobMain = document.querySelector('.profile__subtitle');
 const form = document.querySelector('.popup__form');
-const createPopup = document.querySelector('.popup__create-card');
+const createPopup = document.querySelector('.popup_create-card');
 const createPopupOpen = document.querySelector('.profile__addbutton');
-const createPopupClose = document.querySelector('.createPopup__close');
-const linkCard = document.querySelector('.createPopup__input_card-link');
-const nameCard = document.querySelector('.createPopup__input_card-name');
+const createPopupClose = document.querySelector('.popup_create-close');
+const linkCard = document.querySelector('.create_input-link');
+const nameCard = document.querySelector('.create_input-name');
 const formAdd = document.querySelector('.popup__form_add');
 const cardsElement = document.querySelector('#card');
 const cardTemplate = document.querySelector('.elements').content;
 const elementDelit = document.querySelector('.element__delit');
-const bigCard = document.querySelector('.popup__big-card');
+const bigCard = document.querySelector('.popup_big-card');
 const openBigCard = document.querySelector('.element__photo');
-const closeBigCard = document.querySelector(".popup__close-card")
-const bigPhoto = document.querySelector('.bigCard__photo');
-const bigCardTitle = document.querySelector('.bigCard__title');
+const closeBigCard = document.querySelector(".popup__close-card");
+const bigPhoto = document.querySelector('.popup_big-photo');
+const bigCardTitle = document.querySelector('.popup_big-title');
 
 const initialCards = [ // создаем массив карточек
   {
@@ -61,16 +61,18 @@ function createCard(item){ // создаем функцию добавления
   element.querySelector('.element__delit').addEventListener('click', function(evt) {  // добавляем возможность удалять карточки
     evt.target.closest('.element').remove();
   });
- element.addEventListener('click', function(evt){  // функция открытия по любой карточке из маленькой в большую
-   evt.preventDefault();
-   const card = evt.target.closest('.element');
-   const image = card.querySelector('.element__photo').src;
-   openCard(image);
- })
+  element.querySelector('.element__photo').addEventListener('click', function(evt){  // функция открытия по любой карточке из маленькой в большую
+    evt.preventDefault();
+    const card = evt.target.closest('.element');
+    const image = card.querySelector('.element__photo').src;
+    openCard(image);
+   
+  });
+
   return element;
 }
 
-function openCard(src, alt) { 
+function openCard(src, alt) {
   bigPhoto.src = src;
   bigPhoto.alt = alt;
   openPopup(bigCard);
