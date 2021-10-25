@@ -1,6 +1,6 @@
 const popupEdit = document.querySelector('.popup_edit-card');
-const popupOpen = document.querySelector('.profile__editbutton');
-const popupClose = document.querySelector('.popup__close');
+const popupOpenEdit = document.querySelector('.profile__editbutton');
+const popupCloseEdit = document.querySelector('.popup_close-edit');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_job');
 const nameMain = document.querySelector('.profile__title');
@@ -8,7 +8,7 @@ const jobMain = document.querySelector('.profile__subtitle');
 const form = document.querySelector('.popup__form');
 const createPopup = document.querySelector('.popup_create-card');
 const createPopupOpen = document.querySelector('.profile__addbutton');
-const createPopupClose = document.querySelector('.popup__close-create');
+const createPopupClose = document.querySelector('.popup_close-create');
 const linkCard = document.querySelector('.popup__input_create_link');
 const nameCard = document.querySelector('.popup__input_create_name');
 const formAdd = document.querySelector('.popup__form_add');
@@ -17,9 +17,10 @@ const cardTemplate = document.querySelector('.elements').content;
 const elementDelit = document.querySelector('.element__delit');
 const bigCard = document.querySelector('.popup_big-card');
 const openBigCard = document.querySelector('.element__photo');
-const closeBigCard = document.querySelector(".popup__close-card");
+const closeBigCard = document.querySelector(".popup_close-card");
 const bigPhoto = document.querySelector('.popup__big-photo');
 const bigCardTitle = document.querySelector('.popup__big-title');
+const popupTitle = document.querySelector('.popup__big-title');
 
 const initialCards = [ // создаем массив карточек
   {
@@ -65,16 +66,17 @@ function createCard(item){ // создаем функцию добавления
     evt.preventDefault();
     const card = evt.target.closest('.element');
     const image = card.querySelector('.element__photo').src;
-    openCard(image);
+    openCard(item);
    
   });
 
   return element;
 }
 
-function openCard(src, alt) {
-  bigPhoto.src = src;
-  bigPhoto.alt = alt;
+function openCard(item) {
+  bigPhoto.src = item.link;
+  bigPhoto.alt = item.name;
+  popupTitle.textContent = item.name;
   openPopup(bigCard);
 }
 
@@ -96,10 +98,9 @@ function addCard(evt) { //функция заполнения и сохране�
   closePopup(createPopup);
 }
  formAdd.addEventListener('submit', addCard)
+
 function openPopup(popup) { //создаем функцию открытия попапов
   popup.classList.add('popup_active');
-  nameInput.value = nameMain.textContent;
-  jobInput.value = jobMain.textContent;
 }
 
 function closePopup(popup) {  //создаем функцию закрытия попапов 
@@ -113,10 +114,13 @@ function submitForm(event) {  //функция соранения изменен
   closePopup(popupEdit);
 }
 
-form.addEventListener('submit', submitForm)
+form.addEventListener('submit', submitForm) 
+  nameInput.value = nameMain.textContent;
+  jobInput.value = jobMain.textContent;
 
-popupClose.addEventListener('click', () => closePopup(popupEdit));
-popupOpen.addEventListener('click', () => openPopup(popupEdit));
+
+popupCloseEdit.addEventListener('click', () => closePopup(popupEdit));
+popupOpenEdit.addEventListener('click', () => openPopup(popupEdit));
 createPopupClose.addEventListener('click', () => closePopup(createPopup));
 createPopupOpen.addEventListener('click', () => openPopup(createPopup));
 closeBigCard.addEventListener('click', () =>closePopup(bigCard));
