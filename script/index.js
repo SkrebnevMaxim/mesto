@@ -22,6 +22,8 @@ const bigPhoto = document.querySelector('.popup__big-photo');
 const bigCardTitle = document.querySelector('.popup__big-title');
 const popupTitle = document.querySelector('.popup__big-title');
 
+
+
 const initialCards = [ // создаем массив карточек
   {
     name: 'Архыз',
@@ -97,6 +99,7 @@ function addCard(evt) { //функция заполнения и сохране�
   evt.target.reset(); // стираем введенные параметры в input после добавления карточки
   closePopup(createPopup);
 }
+
  formAdd.addEventListener('submit', addCard)
 
 function openPopup(popup) { //создаем функцию открытия попапов
@@ -104,8 +107,9 @@ function openPopup(popup) { //создаем функцию открытия п�
 }
 
 function closePopup(popup) {  //создаем функцию закрытия попапов 
-  popup.classList.remove('popup_active');
+  popup.classList.remove('popup_active') 
 }
+
 
 function submitForm(event) {  //функция соранения изменений в редакторе (имя/должность)
   event.preventDefault();
@@ -119,8 +123,20 @@ form.addEventListener('submit', submitForm)
   jobInput.value = jobMain.textContent;
 
 
+
 popupCloseEdit.addEventListener('click', () => closePopup(popupEdit));
 popupOpenEdit.addEventListener('click', () => openPopup(popupEdit));
 createPopupClose.addEventListener('click', () => closePopup(createPopup));
 createPopupOpen.addEventListener('click', () => openPopup(createPopup));
 closeBigCard.addEventListener('click', () =>closePopup(bigCard));
+
+
+const popup = document.querySelector('.popup') // функция закрытия через клик в любом месте
+function closePopupTarget (evt){
+  console.log(evt.target)
+  if (evt.target.classList.contains('popup__body')){
+      closePopup(popup)
+  }
+}
+
+popup.addEventListener('click', closePopupTarget);
