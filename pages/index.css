@@ -47,13 +47,6 @@
 @import url(../blocks/bigCard/__big/popup__big-photo.css);
 @import url(../blocks/bigCard/popup_big-card.css);
 @import url(../blocks/bigCard/__close/popup__close_card.css);
-
-@import url(../blocks/validate/button_inactive.css);
-@import url(../blocks/validate/form__input-error_active.css);
-@import url(../blocks/validate/form__input.css);
-@import url(../blocks/validate/form__input_type_error.css);
-@import url(../blocks/validate/form__set.css);
-@import url(../blocks/validate/form__submit.css);
 @import url(../blocks/popup/__btn/_reset/popup__btn_reset.css);
 @import url(../blocks/error/error.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_error.css);

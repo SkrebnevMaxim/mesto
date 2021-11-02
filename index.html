@@ -52,10 +52,10 @@
         <button type="button" class="popup__close popup__close_edit"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form name="formPopup" class="popup__form popup__form_edit" novalidate>
-          <input class="popup__input popup__input_type_name" type="text" name="nameInput" required placeholder="Ввведите имя ..." minlength="2" maxlength="40">
-          <span id="card-error" class="error"></span>
-          <input class="popup__input popup__input_type_job" type="text" name="jobInput" required placeholder="Введите профессию ..." minlength="2" maxlength="200">
-          <span id="email-error" class="error"></span>
+          <input id="name-profile" class="popup__input popup__input_type_name" type="text" name="nameInput" required placeholder="Ввведите имя ..." minlength="2" maxlength="40">
+          <span id="name-profile-error" class="error"></span>
+          <input id="job-profile" class="popup__input popup__input_type_job" type="text" name="jobInput" required placeholder="Введите профессию ..." minlength="2" maxlength="200">
+          <span id="job-profile-error" class="error"></span>
           <button class="popup__btn" type="submit" desabled>Сохранить</button>
         </form>
       </div>
