@@ -107,7 +107,19 @@ function openPopup(popup) { //создаем функцию открытия п�
 }
 
 function closePopup(popup) {  //создаем функцию закрытия попапов 
-  popup.classList.remove('popup_active') 
+  popup.classList.remove('popup_active');
+}
+
+function closePopupByOverlay(event, popup){ // функция закрытия popup кликом на оверлей
+  if (event.target.classList.contains('popup__body')){
+    closePopup(popup)
+  }
+}
+
+function closePopupEsc (event, popup){  // функция закрытия popup черех ESC
+  if(event.which === 27){
+   closePopup(popup)
+  }
 }
 
 
@@ -129,14 +141,11 @@ popupOpenEdit.addEventListener('click', () => openPopup(popupEdit));
 createPopupClose.addEventListener('click', () => closePopup(createPopup));
 createPopupOpen.addEventListener('click', () => openPopup(createPopup));
 closeBigCard.addEventListener('click', () =>closePopup(bigCard));
+popupEdit.addEventListener('click', (event) => closePopupByOverlay(event, popupEdit));
+createPopup.addEventListener('click', (event) => closePopupByOverlay(event, createPopup));
+bigCard.addEventListener('click', (event) => closePopupByOverlay(event, bigCard));
+document.addEventListener('keydown', (event) => closePopupEsc(event, popupEdit));
+document.addEventListener('keydown', (event) => closePopupEsc(event, createPopup));
+document.addEventListener('keydown', (event) => closePopupEsc(event, bigCard));
 
 
-const popup = document.querySelector('.popup') // функция закрытия через клик в любом месте
-function closePopupTarget (evt){
-  console.log(evt.target)
-  if (evt.target.classList.contains('popup__body')){
-      closePopup(popup)
-  }
-}
-
-popup.addEventListener('click', closePopupTarget);
