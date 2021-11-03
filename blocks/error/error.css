@@ -2,3 +2,6 @@
   color: red;
   padding-top: 5px;
 }
+.error:valid {
+  visibility: hidden;
+}
