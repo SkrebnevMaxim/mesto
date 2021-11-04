@@ -15,18 +15,6 @@ function hideError(input, form, config) {
   input.classList.remove(config.inputErrorClass); //скрываем строку
   errorElement.textContent = ""; // скрываем стандартный текст ошибки
 }
-function hideErrors(parent) {
-  // найдем все инпуты с ошибками валидации. 
-  // их может быть много, поэтому надо вернуть массив элементов с помощью querySelectorAll
-  const inputs = parent.querySelectorAll('popup__input');
-  // найдем форму, она нам понадобится чтобы передать вторым параметром
-  // форма может быть только однна, поэтому используем querySelector
-  const form = parent.querySelector('popup__form');
-  // пробежимся в цикле по элементам и спрячем ошибки
-  inputs.forEach(input => {
-      hideError(input, form, config);
-  });
-}
 
 function showError(input, form, config) {
   //функция показа ошибки валидации

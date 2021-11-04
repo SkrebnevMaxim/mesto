@@ -23,7 +23,7 @@ const bigPhoto = document.querySelector(".popup__big-photo");
 const bigCardTitle = document.querySelector(".popup__big-title");
 const popupTitle = document.querySelector(".popup__big-title");
 const ESC_CODE = "Escape";
-const popupInput = document.querySelector('.popup__input')
+const popupInput = document.querySelectorAll('.popup__input')
 
 initialCards.forEach(prependCard);
 
@@ -95,6 +95,9 @@ function openPopup(popup) {
 function closePopup (popup) {
   //создаем функцию закрытия попапов
   popup.classList.remove("popup_active");
+  popupInput.forEach(input => {
+    hideError(input, form, config);
+});
 }
 
 function closePopupByOverlay(event) {  // функция закрытия popup кликом на оверлей
@@ -124,22 +127,8 @@ form.addEventListener("submit", submitForm);
 nameInput.value = userName.textContent;
 jobInput.value = userJob.textContent;
 
-function hideErrors(parent) {
-  // найдем все инпуты с ошибками валидации. 
-  // их может быть много, поэтому надо вернуть массив элементов с помощью querySelectorAll
-  const inputs = parent.querySelectorAll('.popup__input');
-  // найдем форму, она нам понадобится чтобы передать вторым параметром
-  // форма может быть только однна, поэтому используем querySelector
-  const form = parent.querySelector('.popup__form');
-  // пробежимся в цикле по элементам и спрячем ошибки
-  inputs.forEach(input => {
-      hideError(inputs, form, config);
-  });
-}
-
 popupCloseEdit.addEventListener("click", () => {
-  
-  closePopup(popupEdit);
+closePopup(popupEdit); 
 });
 
 popupOpenEdit.addEventListener("click", () => {
