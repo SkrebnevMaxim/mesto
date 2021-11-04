@@ -95,9 +95,6 @@ function openPopup(popup) {
 function closePopup (popup) {
   //создаем функцию закрытия попапов
   popup.classList.remove("popup_active");
-  popupInput.forEach(input => {
-    hideError(input, form, config);
-});
 }
 
 function closePopupByOverlay(event) {  // функция закрытия popup кликом на оверлей
@@ -128,7 +125,10 @@ nameInput.value = userName.textContent;
 jobInput.value = userJob.textContent;
 
 popupCloseEdit.addEventListener("click", () => {
-closePopup(popupEdit); 
+  popupInput.forEach(input => {
+    hideError(input, form, config);
+    closePopup(popupEdit);
+});
 });
 
 popupOpenEdit.addEventListener("click", () => {
