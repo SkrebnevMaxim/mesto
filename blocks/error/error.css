@@ -1,4 +1,7 @@
 .error {
-  color: red;
   padding-top: 5px;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
 }

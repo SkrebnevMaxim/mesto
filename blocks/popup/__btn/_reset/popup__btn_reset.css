@@ -1,6 +1,11 @@
 .popup__btn_reset {
-  background: #ffff;
+  background: #fff;
   color: rgba(0, 0, 0, .6);
   border: 1px solid rgba(0, 0, 0, .2);
-  border-radius: 2px; 
+  border-radius: 2px;
+}
+.popup__btn_reset:hover {
+  opacity: 1;
+  transition: none;
+  cursor: unset; 
 }
