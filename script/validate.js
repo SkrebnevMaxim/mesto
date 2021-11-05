@@ -5,8 +5,7 @@ const config = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__btn",
   inactiveButtonClass: "popup__btn_reset",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: 'error_visible'
+  inputErrorClass: "popup__input_type_error"
 };
 
 function hideError(input, form, config) {
@@ -25,7 +24,7 @@ function showError(input, form, config) {
 
 function setFormListener(form, config) {
   // функция обработки формы
-  form.addEventListener("submit", handlerSubmit);
+  form.addEventListener("submit", handleSubmit);
   form.addEventListener("input", () => setSubmitButtonState(form, config));
   const inputs = [...form.querySelectorAll(config.inputSelector)]; // ищем поля формы
 
@@ -47,7 +46,7 @@ function handleFieldValidation(input, form, config) {
   }
 }
 
-function handlerSubmit(evt) {
+function handleSubmit(evt) {
   // функция сохранения без перезагрузки страницы
   evt.preventDefault();
 }

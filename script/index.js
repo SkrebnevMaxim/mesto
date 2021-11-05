@@ -27,12 +27,12 @@ const popupInput = document.querySelectorAll('.popup__input')
 
 initialCards.forEach(prependCard);
 
-function createCard(item) {
+function createCard(data) {
   // создаем функцию добавления элементов из массива на страницу
   const element = cardTemplate.querySelector(".element").cloneNode(true);
-  element.querySelector(".element__title").innerText = item.name; //заполняем карточку элементами
-  element.querySelector(".element__photo").src = item.link;
-  element.querySelector(".element__photo").alt = item.name;
+  element.querySelector(".element__title").innerText = data.name; //заполняем карточку элементами
+  element.querySelector(".element__photo").src = data.link;
+  element.querySelector(".element__photo").alt = data.name;
   element
     .querySelector(".element__like-button")
     .addEventListener("click", function (evt) {
@@ -52,7 +52,7 @@ function createCard(item) {
       evt.preventDefault();
       const card = evt.target.closest(".element");
       const image = card.querySelector(".element__photo").src;
-      openCard(item);
+      openCard(data);
     });
 
   return element;
@@ -90,21 +90,24 @@ formAdd.addEventListener("submit", addCard);
 function openPopup(popup) {
   //создаем функцию открытия попапов
   popup.classList.add("popup_active");
+  window.addEventListener('keydown', handleEscapeKeydown, false); // при нажатии ESC popup закрывается
+  popup.addEventListener('click', handleOverlayClick);  // при клике на оверлей popup закрывается
 }
 
 function closePopup (popup) {
   //создаем функцию закрытия попапов
   popup.classList.remove("popup_active");
+  window.removeEventListener('keydown', handleEscapeKeydown, false);
 }
 
-function closePopupByOverlay(event) {  // функция закрытия popup кликом на оверлей
+function handleOverlayClick(event) {  // функция закрытия popup кликом на оверлей
   if (event.target.classList.contains("popup__body")) {
     const openedPopup = document.querySelector(".popup_active");
     closePopup(openedPopup);
   }
 }
 
-function closePopupEsc(event) {
+function handleEscapeKeydown(event) {
   // функция закрытия popup черех ESC
   if (event.key === ESC_CODE) {
     const openedPopup = document.querySelector(".popup_active");
@@ -112,9 +115,8 @@ function closePopupEsc(event) {
   }
 }
 
-function submitForm(event) {
+function submitForm() {
   //функция соранения изменений в редакторе (имя/должность)
-  event.preventDefault();
   userName.textContent = nameInput.value;
   userJob.textContent = jobInput.value;
   closePopup(popupEdit);
@@ -124,11 +126,12 @@ form.addEventListener("submit", submitForm);
 nameInput.value = userName.textContent;
 jobInput.value = userJob.textContent;
 
+
 popupCloseEdit.addEventListener("click", () => {
   popupInput.forEach(input => {
-    hideError(input, form, config);
-    closePopup(popupEdit);
-});
+  hideError(input, form, config);
+  closePopup(popupEdit);
+  });
 });
 
 popupOpenEdit.addEventListener("click", () => {
@@ -139,5 +142,3 @@ popupOpenEdit.addEventListener("click", () => {
 createPopupClose.addEventListener("click", () => closePopup(createCardPopup));
 openCardFormButton.addEventListener("click", () => openPopup(createCardPopup));
 closeBigCard.addEventListener("click", () => closePopup(bigCard));
-document.addEventListener("click", closePopupByOverlay);
-document.addEventListener("keydown", closePopupEsc);
