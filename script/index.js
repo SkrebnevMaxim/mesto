@@ -126,7 +126,6 @@ form.addEventListener("submit", submitForm);
 nameInput.value = userName.textContent;
 jobInput.value = userJob.textContent;
 
-
 popupCloseEdit.addEventListener("click", () => {
   popupInput.forEach(input => {
   hideError(input, form, config);
